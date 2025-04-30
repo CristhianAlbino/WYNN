@@ -1,0 +1,459 @@
+/**
+ * @TODO:
+ *  1. Refactor a bit, is messy.
+ *  2. Colors good, fonts meh.
+ *  3. Finish actual cart layout.
+ *  4. Wire up various data bits in UI.
+ *  5. Pull data out of mockup in JS layer.
+ */
+html,
+body {
+  height: 100%;
+}
+body {
+  padding-top: 230px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #2e2e2e;
+  background-color: #f2f2f2;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+a:link,
+a:visited {
+  color: #ffbb00;
+}
+a:hover,
+a:active {
+  color: #ffbb00;
+  text-decoration: none;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px;
+}
+.sticky {
+  height: 200px;
+}
+.inner-wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 9999;
+  background-color: #1e1e1e;
+}
+.site-header .inner-wrap {
+  display: table;
+  height: 120px;
+}
+.site-header h1,
+.site-header ul {
+  display: table-cell;
+  vertical-align: middle;
+}
+.site-header h1 {
+  margin: 0;
+  font-weight: 600;
+  color: #fff;
+}
+.site-header ul {
+  font-size: 16px;
+  text-align: right;
+  color: #b2c4d8;
+}
+.site-header ul li {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.site-header .search {
+  color: #434f5b;
+}
+.site-header .account {
+  color: #6f8295;
+}
+.site-header ul button {
+  color: #aab5c0;
+  border: none;
+  background: none;
+  outline: none;
+}
+.site-header ul a:hover,
+.site-header ul button:hover,
+.site-header ul button.have-items {
+  color: #b8d87f;
+}
+/* @TODO */
+.site-header ul button.have-items {
+  position: relative;
+}
+.site-header ul button.have-items:before {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  z-index: 9;
+  content: '\f111';
+  display: block;
+  font-family: 'FontAwesome';
+  color: #fff;
+}
+.site-header ul button.have-items:after {
+  position: absolute;
+  top: -4px;
+  right: 3px;
+  z-index: 11;
+  content: attr(data-item-num);
+  display: block;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #1e1e1e;
+}
+.site-toolbar,
+.site-toolbar * {
+  transition: all 0.5s;
+}
+.site-toolbar {
+  position: fixed;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  z-index: 9999;
+  background-color: #f7aa06;
+}
+.site-toolbar .notifications {
+  float: left;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7px;
+  font-weight: 600;
+  text-align: right;
+  opacity: 0;
+}
+.site-toolbar .notifications span {
+  color: #434f5b;
+}
+.content-wrap {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.filter-grid {
+  position: fixed;
+  top: 150px;
+  left: 0;
+  z-index: 8999;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #1e1e1e;
+}
+.filter-grid .filter-cell {
+  float: left;
+  width: 25%;
+  padding: 7px;
+}
+.filter-grid select {
+  font-weight: 600;
+}
+.product-grid {
+  width: 100%;
+}
+.grid-product {
+  width: 25%;
+  padding: 7px;
+}
+.grid-product .img-name {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid #1e1e1e;
+}
+.grid-product .img-name h4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  font-size: 18px;
+  color: #1e1e1e;
+  background-color: rgba(242, 242, 242, 0.8);
+}
+.grid-product .img-name img {
+  width: 100%;
+}
+.grid-product .price {
+  position: relative;
+  padding: 15px;
+  font-weight: bold;
+  background-color: #aab5c0;
+}
+.grid-product .add-to-cart {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  color: #fff;
+  background-color: #434f5b;
+}
+.grid-product .add-to-cart:hover {
+  color: #b8d87f;
+  background-color: #2b2e35;
+}
+.camera {
+  background-image: url(https://imgur.com/fP6yjZ3.jpg);
+}
+.watch {
+  background-image: url(https://imgur.com/DWMEYH3.jpg);
+}
+.typewriter {
+  background-image: url(https://imgur.com/DVT28Z6.jpg);
+}
+.canoe {
+  background-image: url(https://imgur.com/SC1jz9L.jpg);
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #ff5e14;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+
+.cart {
+  position: fixed;
+  top: -100%;
+  z-index: 9599;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: top 0.5s;
+  color: #fff;
+  background-color: #1e1e1e;
+}
+.show-cart {
+  top: 150px;
+}
+.product-quantity {
+  position: relative;
+  width: 60px;
+  height: 40px;
+}
+.product-quantity .plus,
+.product-quantity .minus {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.product-quantity .plus:hover,
+.product-quantity .minus:hover {
+  color: #b8d87f;
+}
+.product-quantity .plus {
+  top: 0;
+  left: 0;
+}
+.product-quantity .minus {
+  bottom: 0;
+  left: 0;
+}
+.product-quantity input[type=number] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  background: none;
+  border: none;
+  -moz-appearance: textfield;
+}
+.product-quantity input[type=number]::-webkit-inner-spin-button,
+.product-quantity input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

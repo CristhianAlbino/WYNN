@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  		<!-- Site favicon -->
+      <link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/w/1.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/w/1.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/w/1.png"
+		/>
+
+  <meta charset="UTF-8">
+  <title>WYN</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.3.0/font-awesome-animation.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<nav>
+  <div class="wrapper">
+    <div class="logo"><a href="/Tela Inicial copy/indexx.html">WYN</a></div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Sobre Nós</a></li>
+      <li>
+        <a href="#" class="desktop-item">Serviços</a>
+        <input type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">Serviços</label>
+        <ul class="drop-menu">
+          <li><a href="#">Eletricista</a></li>
+          <li><a href="#">Marceneiro</a></li>
+          <li><a href="/Tela Cliente/tela produto/dist/index.html">Pintor</a></li>
+          <li><a href="#">Piscineiro</a></li>
+        </ul>
+      </li>
+      <li>
+      <li><a href="#">Contate-nos</a></li>
+    </ul>
+    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+  </div>
+</nav>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <h4 class="flex-grow mb-4">Qual o método de Pagamento?</h4>
+<div class="container flex-grow">
+    <input type="radio" id="cash" value="cash" name="payement-mode" onchange="setPaymentMode('cash')" checked />
+  <label for="cash">
+    <a href="/Tela Cliente/forma de pagamento/dist/QR CODE.png" style="text-decoration: none; color: inherit;">
+      <span>
+        <i class="fa fa-money-bill mr-1"></i> Pix</span>
+  </label>
+    </a>
+    <input type="radio" name="payement-mode" id="card" value="card"onchange="setPaymentMode('card')"  />
+  <label for="card">
+    <a href="/Tela Cliente/tela pagamento/dist/index.html" style="text-decoration: none; color: inherit;">
+      <span>
+          <i class="fa fa-money-check mr-1"></i> Débito/Crédito
+      </span>
+  </a>
+  
+  </label>
+</div>
+
+  </div>
+  <script  src="./script.js"></script>
+
+</body>
+</html>

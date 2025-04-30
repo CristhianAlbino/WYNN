@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <title>WYN</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/w/1.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/w/1.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/w/1.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/Tela Inicial copy/indexx.html" class="Logo">WYN Login</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
+            <h6 class="#"><span>Login </span><span>Cadastre-se</span></h6>
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+            <label for="reg-log"></label>
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+
+                <!-- Login Form -->
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Login</h4>
+                      <div class="form-group">
+                        <input type="email" class="form-style" placeholder="Email" name="email" required>
+                        <i class="input-icon uil uil-at"></i>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input type="password" class="form-style" placeholder="Senha" name="senha" required>
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                      <button class="btn mt-4" id="btnLogin">Login</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Register Form -->
+                <div class="card-back">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-3 pb-3">Cadastre-se</h4>
+                      <form id="formCadastro">
+                        <div class="form-group">
+                          <input type="text" class="form-style" placeholder="Nome Completo" name="nome" required>
+                          <i class="input-icon uil uil-user"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="tel" class="form-style" placeholder="Telefone" name="telefone">
+                          <i class="input-icon uil uil-phone"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="email" class="form-style" placeholder="Email" name="emailCadastro" required>
+                          <i class="input-icon uil uil-at"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="password" class="form-style" placeholder="Senha" name="senhaCadastro" required>
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <button type="submit" class="btn mt-4" id="btnCadastrar">Cadastrar</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('btnLogin').addEventListener('click', async (e) => {
+      e.preventDefault();
+      const email = document.querySelector('input[name="email"]').value;
+      const senha = document.querySelector('input[name="senha"]').value;
+
+      try {
+        const response = await fetch('http://127.0.0.1:3000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, senha })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.token && data.usuario) {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("usuario", JSON.stringify(data.usuario));
+          localStorage.setItem("userId", data.usuario._id); // <-- ESSENCIAL
+
+          alert(data.message);
+          window.location.href = "indexx.html";
+        } else {
+          alert(data.message || "Erro ao fazer login.");
+        }
+      } catch (error) {
+        alert("Erro ao conectar ao servidor.");
+        console.error(error);
+      }
+    });
+
+    document.getElementById('formCadastro').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nome = document.querySelector('input[name="nome"]').value;
+      const telefone = document.querySelector('input[name="telefone"]').value;
+      const email = document.querySelector('input[name="emailCadastro"]').value;
+      const senha = document.querySelector('input[name="senhaCadastro"]').value;
+
+      try {
+        const response = await fetch('http://127.0.0.1:3000/cadastrar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, telefone, email, senha })
+        });
+
+        const data = await response.json();
+        alert(data.message);
+      } catch (error) {
+        alert("Erro ao conectar ao servidor.");
+      }
+    });
+  </script>
+
+</body>
+</html>

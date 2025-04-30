@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+		<link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/w/1.png"
+    />
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/w/1.png"
+    />
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/w/1.png"
+    />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/Tela Inicial copy/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css">
+
+<style>
+  /* Estilos do carrossel */
+  .testimonial-carousel .shadow-effect {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #ECECEC;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+  }
+  .testimonial-carousel .shadow-effect p {
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 0 0 17px 0;
+    font-weight: 300;
+  }
+  .testimonial-carousel .testimonial-name {
+    margin: -17px auto 0;
+    display: table;
+    background: #ff5e14;
+    padding: 9px 35px;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 9px 18px rgba(0,0,0,0.12), 0 5px 7px rgba(0,0,0,0.05);
+  }
+  .testimonial-carousel .item {
+    text-align: center;
+    padding: 50px;
+    margin-bottom: 80px;
+    opacity: .2;
+    transform: scale3d(0.8, 0.8, 1);
+    transition: all 0.3s ease-in-out;
+  }
+  .testimonial-carousel .owl-item.active.center .item {
+    opacity: 1;
+    transform: scale3d(1.0, 1.0, 1);
+  }
+  .testimonial-carousel .owl-item img {
+    max-width: 90px;
+    margin: 0 auto 17px;
+  }
+</style>
+    <title>WYN</title>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a href="/Tela Inicial copy/indexx.html">WYN</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="#" class="active" style="--navAni:1">Inicio</a></li>
+                <li><a href="#" style="--navAni:2">Sobre Nós</a></li>
+                <li><a href="/Tela Cliente/serviços/dist/index.html" style="--navAni:3">Serviços</a></li>
+                <li><a href="/em breve/index.html" style="--navAni:4">Contate-nos</a></li>
+                <li><a href="/Seleção/dist/index.html" style="--navAni:5">Login/Cadastro</a></li>
+            </ul>
+        </div>
+    </header>
+      <a> <h1 href="/Tela Cliente/serviços/dist/index.html" class="cta-button">Nossos Serviços</h1></a> 
+   </div>
+    <div class="slider" x-data="{start: true, end: false}" style="padding-top: 0px;">
+        <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+          <div class="slider__item">
+            <a href="/Tela Cliente/tela produto/dist/eletricista.html"><img class="slider__image" src="https://i.pinimg.com/enabled_lo/564x/70/d2/a5/70d2a5bfb09edcb66b7507e1a3e199ec.jpg" alt="Image"> </a>
+            <div class="slider__info">
+             <h2>Eletricista</h2>
+            </div>
+          </div>
+          <div class="slider__item">
+           <a href="/Tela Cliente/tela produto/dist/encanador.html"><img class="slider__image" src="https://i.pinimg.com/564x/18/a8/8e/18a88e4980d39c2405a2093aeb55ac22.jpg" alt="Image"></a>
+            <div class="slider__info">
+              <h2>Encanador</h2>
+            </div>
+          </div>
+          <div class="slider__item">
+            <a href="/Tela Cliente/tela produto/dist/pintor.html"><img class="slider__image" src="https://i.pinimg.com/564x/e9/ab/f3/e9abf3d9d34571e70d88a97ae6f63b95.jpg" alt="Image"></a>
+            <div class="slider__info">
+              <h2>Pintor</h2>
+            </div>
+          </div>
+          <div class="slider__item">
+            <a href="/Tela Cliente/tela produto/dist/diarista.html"><img class="slider__image" src="https://i.pinimg.com/564x/7a/63/28/7a6328a7c8e3cdb300c4f365985baa55.jpg" alt="Image"></a>
+            <div class="slider__info">
+              <h2>Limpeza</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
+  </section>
+        <footer class="footer-section">
+          <div class="container">
+              <div class="footer-content pt-5 pb-5">
+                  <div class="row">
+                      <div class="col-xl-4 col-lg-4 mb-50">
+                          <div class="footer-widget">
+                              <div class="footer-logo">
+                                  <a href="indexx.html"><img src="/Tela Inicial copy/w (1).png" class="img-fluid" alt="logo"></a>
+                              </div>
+                              <div class="footer-text">
+                                  <p>A Melhor forma de encontrar serviços</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                          <div class="footer-widget">
+                              <div class="footer-widget-heading">
+                                  <h3>Links Uteis</h3>
+                              </div>
+                              <ul>
+                                  <li><a href="/Tela Inicial copy/indexx.html">Inicio</a></li>
+                                  <li><a href="#">Sobre</a></li>
+                                  <li><a href="/Tela Cliente/serviços/dist/index.html">Serviços</a></li>
+                                  <li><a href="/em breve/index.html">Contate-nos</a></li>
+                                  <li><a href="/em breve/index.html">Nosso Time</a></li>
+                                  <li><a href="/Seleção/dist/index.html">Login</a></li>
+                                  <li><a href="/em breve/index.html">Em breve</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                          <div class="footer-widget">
+                              <div class="footer-widget-heading">
+                                  <h3>Cadastre-se</h3>
+                              </div>
+                              <div class="footer-text mb-25">
+                                  <p>Não perca nossas novidades!</p>
+                              </div>
+                              <div class="subscribe-form">
+                                  <form action="#">
+                                      <input type="text" placeholder="Email Address">
+                                      <button><i class="fab fa-telegram-plane"></i></button>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="copyright-area">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                          <div class="copyright-text">
+                              <p>Copyright &copy; 2024, All Right Reserved <a href="/Tela Inicial copy/Termos e Condições.docx">Veja mais</a></p>
+                          </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                          <div class="footer-menu">
+                              <ul>
+                                  <li><a href="/Tela Inicial copy/indexx.html">Inicio</a></li>
+                                  <li><a href="/Tela Inicial copy/TERMOS.DOCX">Termos</a></li>
+                                  <li><a href="/Tela Inicial copy/TERMOS.DOCX">Privacidade</a></li>
+                                  <li><a href="/LANDING PAGE WYN/LANDING PAGE WYN/login.html">Login</a></li>
+                                  <li><a href="/em breve/index.html">Contate-nos</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/owl.carousel.min.js"></script>
+<script>
+  jQuery(document).ready(function($) {
+    "use strict";
+    $('#customers-testimonials').owlCarousel({
+      loop: true,
+      center: true,
+      items: 3,
+      margin: 0,
+      autoplay: true,
+      dots: true,
+      autoplayTimeout: 8500,
+      smartSpeed: 450,
+      responsive: {
+        0: { items: 1 },
+        768: { items: 2 },
+        1170: { items: 3 }
+      }
+    });
+  });
+</script>
+</html>

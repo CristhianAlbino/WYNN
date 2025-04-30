@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Solicitar um Serviço - WYN</title>
+  <link rel="stylesheet" href="./style.css">
+  <script>
+    // Função para enviar o formulário
+    async function enviarFormulario(event) {
+      event.preventDefault(); // Impede o recarregamento da página
+
+      // Recupera o token de autenticação armazenado no localStorage
+      const token = localStorage.getItem('authToken');
+
+      // Captura os dados do formulário
+      const dados = {
+        nome_cliente: document.getElementById('nome_cliente').value,
+        email_cliente: document.getElementById('email_cliente').value,
+        telefone_cliente: document.getElementById('telefone_cliente').value,
+        endereco_servico: document.getElementById('endereco_servico').value || '',
+        notas_adicionais: document.getElementById('notas_adicionais').value || '',
+        tipo_servico: document.getElementById('tipo_servico').value,
+        urgente: document.querySelector('input[name="urgente"]').checked,
+        horario_preferencial: document.querySelector('input[name="horario_preferencial"]:checked')?.value || '',
+        servicos_adicionais: Array.from(document.querySelectorAll('input[name="servicos_adicionais"]:checked')).map(
+          (checkbox) => checkbox.value
+        ) || []
+      };
+
+      try {
+        // Atualiza o status na tela
+        atualizarStatus('Enviando solicitação...');
+
+        // Faz a requisição ao backend com o token no cabeçalho
+        const response = await fetch('http://localhost:3000/solicitar-servico', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token ? `Bearer ${token}` : '' // Envia o token se disponível
+          },
+          body: JSON.stringify(dados)
+        });
+
+        if (response.ok) {
+          const respostaServidor = await response.json();
+          console.log("Resposta do servidor:", respostaServidor);
+          atualizarStatus('Seu pedido está em processamento!');
+          alert('Solicitação enviada com sucesso!');
+        } else {
+          const erro = await response.json();
+          console.error("Erro no envio:", erro);
+          atualizarStatus('Erro ao processar a solicitação.');
+          alert('Erro ao enviar a solicitação. Tente novamente.');
+        }
+      } catch (error) {
+        console.error('Erro ao enviar:', error);
+        atualizarStatus('Falha na conexão com o servidor.');
+        alert('Falha na conexão com o servidor.');
+      }
+    }
+
+    // Função para atualizar o status do pedido na tela
+    function atualizarStatus(mensagem) {
+      const statusElemento = document.getElementById('status_pedido');
+      statusElemento.textContent = mensagem;
+      statusElemento.style.display = 'block'; // Exibe o status
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Formulário de Solicitação de Serviço WYN -->
+  <form onsubmit="enviarFormulario(event)">
+    <h1>Solicite um Serviço</h1>
+
+    <div class="column">
+      <label for="nome_cliente">Seu Nome</label>
+      <input type="text" id="nome_cliente" name="nome_cliente" required />
+
+      <label for="email_cliente">E-mail</label>
+      <input type="email" id="email_cliente" name="email_cliente" required />
+
+      <label for="telefone_cliente">Telefone</label>
+      <input type="tel" id="telefone_cliente" name="telefone_cliente" required />
+
+      <label for="endereco_servico">Endereço do Serviço</label>
+      <textarea id="endereco_servico" name="endereco_servico"></textarea>
+
+      <label for="notas_adicionais">Notas Adicionais</label>
+      <textarea id="notas_adicionais" name="notas_adicionais"></textarea>
+    </div>
+
+    <div class="column">
+      <label for="tipo_servico">Escolha o Serviço</label>
+      <select id="tipo_servico" name="tipo_servico" required>
+        <option value="limpeza">Limpeza</option>
+        <option value="eletricista">Eletricista</option>
+        <option value="encanador">Encanador</option>
+      </select>
+
+      <label>
+        <input type="checkbox" name="urgente" />
+        Serviço Urgente?
+      </label>
+
+      <fieldset>
+        <legend>Horário Preferencial:</legend>
+        <label>
+          <input type="radio" name="horario_preferencial" value="manha" />
+          Manhã
+        </label>
+        <label>
+          <input type="radio" name="horario_preferencial" value="tarde" />
+          Tarde
+        </label>
+        <label>
+          <input type="radio" name="horario_preferencial" value="noite" />
+          Noite
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Serviços Adicionais (opcional):</legend>
+        <label>
+          <input type="checkbox" name="servicos_adicionais" value="materiais" />
+          Trazer Materiais
+        </label>
+        <label>
+          <input type="checkbox" name="servicos_adicionais" value="desinfeccao" />
+          Incluir Desinfecção
+        </label>
+        <label>
+          <input type="checkbox" name="servicos_adicionais" value="limpeza_profunda" />
+          Limpeza Profunda
+        </label>
+      </fieldset>
+
+      <input type="submit" value="Solicitar Serviço" />
+      <input type="reset" value="Limpar Formulário" />
+    </div>
+  </form>
+
+  <!-- Elemento para exibir o status do pedido -->
+  <div id="status_pedido" style="display: none; margin-top: 20px; font-weight: bold; color: green;"></div>
+  
+</body>
+</html>

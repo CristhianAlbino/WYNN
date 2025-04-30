@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic Page Info -->
+		<meta charset="utf-8" />
+		<title>WYN- DASHBOARD</title>
+
+		<!-- Site favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/w/1.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/w/1.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/w/1.png"
+		/>
+
+		<!-- Mobile Specific Metas -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+
+		<!-- Google Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/styles/icon-font.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/datatables/css/dataTables.bootstrap4.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/datatables/css/responsive.bootstrap4.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+		></script>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GBZ3SGGX85");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<div class="pre-loader">
+			<div class="pre-loader-box">
+				<div class="loader-logo">
+					<img src="/Tela Inicial copy/w.png" alt="" />
+				</div>
+				<div class="loader-progress" id="progress_div">
+					<div class="bar" id="bar1"></div>
+				</div>
+				<div class="percent" id="percent1">0%</div>
+				<div class="loading-text">Carregando...</div>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="header-left">
+				<div class="menu-icon bi bi-list"></div>
+				<div
+					class="search-toggle-icon bi bi-search"
+					data-toggle="header_search"
+				></div>
+				<div class="header-search">
+					<form>
+						<div class="form-group mb-0">
+							<i class="dw dw-search2 search-icon"></i>
+							<input
+								type="text"
+								class="form-control search-input"
+								placeholder="Search Here"
+							/>
+							<div class="dropdown">
+								<a
+									class="dropdown-toggle no-arrow"
+									href="#"
+									role="button"
+									data-toggle="dropdown"
+								>
+									<i class="ion-arrow-down-c"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label"
+											>De</label
+										>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label">Para</label>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label"
+											>Sujeito</label
+										>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="text-right">
+										<button class="btn btn-primary">Pesquisar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-right">
+				<div class="dashboard-setting user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="javascript:;"
+							data-toggle="right-sidebar"
+						>
+							<i class="dw dw-settings2"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="user-info-dropdown">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle"
+							href="#"
+							role="button"
+							data-toggle="dropdown"
+						>
+							<span class="user-icon">
+								<img src="/w/1.png" alt="" />
+							</span>
+							<span class="user-name">Cliente</span>
+						</a>
+						<div
+							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+						>
+							<a class="dropdown-item" href="profile.html"
+								><i class="dw dw-user1"></i> Perfil</a
+							>
+							<a class="dropdown-item" href="profile.html"
+								><i class="dw dw-settings2"></i>Configurações</a
+							>
+							<a class="dropdown-item" href="faq.html"
+								><i class="dw dw-help"></i> Ajuda</a
+							>
+							<a class="dropdown-item" href="login.html"
+								><i class="dw dw-logout"></i> Sair</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="right-sidebar">
+			<div class="sidebar-title">
+				<h3 class="weight-600 font-16 text-blue">
+					Configuração de Layout
+					<span class="btn-block font-weight-400 font-12"
+						>Personalização</span
+					>
+				</h3>
+				<div class="close-sidebar" data-toggle="right-sidebar-close">
+					<i class="icon-copy ion-close-round"></i>
+				</div>
+			</div>
+			<div class="right-sidebar-body customscroll">
+				<div class="right-sidebar-body-content">
+					<h4 class="weight-600 font-18 pb-10">Fundo</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-white active"
+							>Claro</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-dark"
+							>Escuro</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Fundo</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-light"
+							>Claro</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-dark active"
+							>Escuro</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Icone</h4>
+					<div class="sidebar-radio-group pb-10 mb-10">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-1"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-1"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebaricon-1"
+								><i class="fa fa-angle-down"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-2"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-2"
+							/>
+							<label class="custom-control-label" for="sidebaricon-2"
+								><i class="ion-plus-round"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-3"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-3"
+							/>
+							<label class="custom-control-label" for="sidebaricon-3"
+								><i class="fa fa-angle-double-right"></i
+							></label>
+						</div>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Icones do Menu</h4>
+					<div class="sidebar-radio-group pb-30 mb-10">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-1"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-1"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebariconlist-1"
+								><i class="ion-minus-round"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-2"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-2"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-2"
+								><i class="fa fa-circle-o" aria-hidden="true"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-3"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-3"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-3"
+								><i class="dw dw-check"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-4"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-4"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebariconlist-4"
+								><i class="icon-copy dw dw-next-2"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-5"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-5"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-5"
+								><i class="dw dw-fast-forward-1"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-6"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-6"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-6"
+								><i class="dw dw-next"></i
+							></label>
+						</div>
+					</div>
+
+					<div class="reset-options pt-30 text-center">
+						<button class="btn btn-danger" id="reset-settings">
+							Resetar Configurações
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="left-side-bar">
+			<div class="brand-logo">
+				<a href="index.html">
+					<img src="/Tela Inicial copy/w (1).png" alt="" class="dark-logo" />
+					<img
+						src="/Tela Inicial copy/w (1).png"
+						alt=""
+						class="light-logo"
+					/>
+				</a>
+				<div class="close-sidebar" data-toggle="left-sidebar-close">
+					<i class="ion-close-round"></i>
+				</div>
+			</div>
+			<div class="menu-block customscroll">
+				<div class="sidebar-menu">
+					<ul id="accordion-menu">
+						<li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-house"></span
+								><span class="mtext">Inicio</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="index.html">Dashboard</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Histórico</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="form-basic.html">Histórico</a></li>
+								<li><a href="/LANDING PAGE WYN/LANDING PAGE WYN/pedido.html">Fazer Pedidos</a></li>
+								<li><a href="/LANDING PAGE WYN/LANDING PAGE WYN/contratos.html">Meus Pedidos</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/Tela Cliente/serviços/dist/index.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi-chat-right-dots"></span
+								><span class="mtext">Serviços</span>
+							</a>
+						</li>
+		
+						<li>
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-file-pdf"></span
+								><span class="mtext">Documentação</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="/Tela Inicial copy/Termos e Condições.docx">Termos e Condições</a></li>
+							</ul>
+						</li>
+						<li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-menu-overlay"></div>
+		<div class="main-container">
+		<div class="pd-20 card-box mb-30">
+			<div class="clearfix">
+			  <h4 class="text-blue h4">Solicitação de Serviço</h4>
+			  <p class="mb-30">Formulário para solicitar um novo serviço</p>
+			</div>
+			<div class="wizard-content">
+			  <form class="tab-wizard wizard-circle wizard" id="solicitar-servico-form">
+				<!-- Passo 1 - Informações do Cliente -->
+				<h5>Informações do Cliente</h5>
+				<section>
+				  <div class="row">
+					<div class="col-md-6">
+					  <div class="form-group">
+						<label>Nome do Cliente:</label>
+						<input type="text" class="form-control" id="nome-cliente" required />
+					  </div>
+					</div>
+					<div class="col-md-6">
+					  <div class="form-group">
+						<label>Email do Cliente:</label>
+						<input type="email" class="form-control" id="email-cliente" required />
+					  </div>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-md-6">
+					  <div class="form-group">
+						<label>Telefone do Cliente:</label>
+						<input type="text" class="form-control" id="telefone-cliente" 
+							   pattern="[0-9]{10,11}" 
+							   title="Digite apenas números (10 ou 11 dígitos)" 
+							   required />
+					  </div>
+					</div>
+					<div class="col-md-6">
+					  <div class="form-group">
+						<label>Urgente:</label>
+						<select class="form-control" id="urgente" required>
+						  <option value="false">Não</option>
+						  <option value="true">Sim</option>
+						</select>
+					  </div>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-md-12">
+					  <div class="form-group">
+						<label>Notas Adicionais:</label>
+						<textarea class="form-control" id="notas-adicionais"></textarea>
+					  </div>
+					</div>
+				  </div>
+				</section>
+		  
+				<!-- Passo 2 - Informações do Serviço -->
+				<h5>Informações do Serviço</h5>
+				<section>
+				  <div class="row">
+					<div class="col-md-6">
+					  <div class="form-group">
+						<label>Tipo de Serviço:</label>
+						<select class="form-control" id="tipo-servico" required>
+						  <option value="">Selecione um serviço</option>
+						  <option value="troca-lampadas">Troca de Lâmpadas</option>
+						  <option value="instalacao-tomadas">Instalação de Tomadas</option>
+						  <option value="curto-circuito">Verificação de Curto-Circuito</option>
+						  <option value="disjuntores">Instalação de Disjuntores</option>
+						  <option value="fiação">Troca de Fiação</option>
+						</select>
+					  </div>
+					</div>
+					<div class="col-md-6">
+					  <div class="form-group">
+						<label>Endereço:</label>
+						<input type="text" class="form-control" id="endereco-servico" required />
+					  </div>
+					</div>
+				  </div>
+		  
+				  <div class="row">
+					<div class="col-md-8">
+					  <div class="form-group">
+						<label>Descrição do Serviço:</label>
+						<textarea class="form-control" id="descricao-servico" readonly></textarea>
+					  </div>
+					</div>
+					<div class="col-md-4">
+					  <div class="form-group">
+						<label>Valor Estimado (R$):</label>
+						<input type="text" class="form-control" id="valor-servico" readonly />
+					  </div>
+					</div>
+				  </div>
+		  
+				  <div class="row">
+					<div class="col-md-12 text-right">
+					  <button type="submit" class="btn btn-success" id="submit-btn">
+						Solicitar Serviço
+					  </button>
+					</div>
+				  </div>
+				</section>
+			  </form>
+			</div>
+		  </div>
+		  
+		  <script>
+			// Dados dos serviços
+			const servicosEletricos = {
+				"troca-lampadas": {
+    descricao: "Substituição de lâmpadas queimadas ou troca por LED. Inclui verificação de soquete, tensão e instalação segura.",
+    valor: 70
+  },
+  "instalacao-tomadas": {
+    descricao: "Instalação de tomadas padrão ABNT com verificação de tensão e aterramento adequado. Pode incluir mudança de local.",
+    valor: 90
+  },
+  "curto-circuito": {
+    descricao: "Verificação e correção de curto-circuito em instalações elétricas, com emissão de laudo técnico. Diagnóstico com ferramentas e reparo.",
+    valor: 120
+  },
+  "disjuntores": {
+    descricao: "Instalação e substituição de disjuntores residenciais ou comerciais. Inclui verificação do quadro e dimensionamento correto.",
+    valor: 180
+  },
+
+  "fiação": {
+    descricao: "Substituição de fiação elétrica antiga ou danificada. Atualização da rede elétrica para maior segurança e eficiência.",
+    valor: 280
+  },
+};
+
+			// Links de pagamento para cada serviço
+			const linksPagamento = {
+  "troca-lampadas": "https://mpago.li/2EJwN5Z",
+  "instalacao-tomadas": "https://mpago.la/26kB967",
+  "curto-circuito": "https://mpago.li/2EJwN5Z",
+  "disjuntores": "https://mpago.la/2reh6w1",
+  "fiação": "https://mpago.la/1z6A1Qr",
+};
+
+		  
+			// Atualiza descrição e valor conforme seleção
+			document.getElementById('tipo-servico').addEventListener('change', function () {
+			  const servicoSelecionado = this.value;
+			  const descricao = document.getElementById('descricao-servico');
+			  const valor = document.getElementById('valor-servico');
+		  
+			  if (servicosEletricos[servicoSelecionado]) {
+				descricao.value = servicosEletricos[servicoSelecionado].descricao;
+				valor.value = servicosEletricos[servicoSelecionado].valor.toFixed(2);
+			  } else {
+				descricao.value = '';
+				valor.value = '';
+			  }
+			});
+		  
+			// Envio do formulário
+			document.getElementById('solicitar-servico-form').addEventListener('submit', async function (e) {
+			  e.preventDefault();
+			  const submitBtn = document.getElementById('submit-btn');
+		  
+			  try {
+				submitBtn.disabled = true;
+				submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...';
+		  
+				const payload = {
+				  nome_cliente: document.getElementById('nome-cliente').value.trim(),
+				  email_cliente: document.getElementById('email-cliente').value.trim(),
+				  telefone_cliente: document.getElementById('telefone-cliente').value.trim(),
+				  tipo_servico: document.getElementById('tipo-servico').value,
+				  endereco_servico: document.getElementById('endereco-servico').value.trim(),
+				  notas_adicionais: document.getElementById('notas-adicionais').value.trim(),
+				  descricao_servico: document.getElementById('descricao-servico').value.trim(),
+				  valor_servico: parseFloat(document.getElementById('valor-servico').value) || 0,
+				  urgente: document.getElementById('urgente').value === 'true'
+				};
+		  
+				if (!payload.nome_cliente || !payload.email_cliente || !payload.telefone_cliente ||
+				  !payload.tipo_servico || !payload.endereco_servico) {
+				  throw new Error('Preencha todos os campos obrigatórios');
+				}
+		  
+				const response = await fetch('http://localhost:3000/solicitar-servico', {
+				  method: 'POST',
+				  headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+				  },
+				  body: JSON.stringify(payload)
+				});
+		  
+				const data = await response.json();
+		  
+				if (!response.ok) {
+				  throw new Error(data.message || 'Erro ao enviar solicitação');
+				}
+		  
+				alert('Solicitação enviada com sucesso! Redirecionando para o pagamento...');
+		  
+				// Redireciona para o link de pagamento
+				const linkPagamento = linksPagamento[payload.tipo_servico];
+				if (linkPagamento) {
+				  window.location.href = linkPagamento;
+				} else {
+				  alert("Link de pagamento não encontrado para o serviço selecionado.");
+				}
+		  
+				document.getElementById('solicitar-servico-form').reset();
+			  } catch (error) {
+				console.error('Erro:', error);
+				alert('Erro: ' + error.message);
+			  } finally {
+				submitBtn.disabled = false;
+				submitBtn.textContent = 'Solicitar Serviço';
+			  }
+			});
+		  </script>
+		  
+		
+		  
+		  <div class="footer-wrap pd-20 mb-20 card-box">
+			Plataforma WYN-TECH
+		  </div>
+		  
+		  <script src="vendors/scripts/core.js"></script>
+		  <script src="vendors/scripts/script.min.js"></script>
+		  <script src="vendors/scripts/process.js"></script>
+		  <script src="vendors/scripts/layout-settings.js"></script>
+		  <script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+		  <script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+		  <script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+		  <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+		  
+		  <noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+		  </noscript>
+		  
+		  <script>
+			async function carregarPerfil() {
+			  const token = localStorage.getItem('token');
+			  const usuarioCache = localStorage.getItem('usuario');
+		  
+			  if (!token || !usuarioCache) {
+				window.location.href = "login.html";
+				return;
+			  }
+		  
+			  const usuario = JSON.parse(usuarioCache);
+			  const nomeSpan = document.querySelector(".user-name");
+			  if (nomeSpan) nomeSpan.textContent = usuario.nome;
+		  
+			  try {
+				const res = await fetch('http://127.0.0.1:3000/perfil', {
+				  headers: { 'Authorization': 'Bearer ' + token }
+				});
+		  
+				if (!res.ok) throw new Error("Erro ao buscar perfil");
+				const data = await res.json();
+		  
+				if (data.usuario?.nome) {
+				  if (nomeSpan) nomeSpan.textContent = data.usuario.nome;
+				}
+		  
+				const info = document.getElementById('info');
+				if (info) {
+				  info.innerHTML = `
+					<h2>Bem-vindo, ${data.usuario.nome}</h2>
+					<p>ID: ${data.usuario._id}</p>
+					<p>Email: ${data.usuario.email}</p>
+				  `;
+				}
+			  } catch (err) {
+				console.error(err);
+				alert('Erro ao carregar perfil');
+				window.location.href = "login.html";
+			  }
+			}
+		  
+			carregarPerfil();
+		  </script>
+		  
+		  </body>
+		  
+</html>

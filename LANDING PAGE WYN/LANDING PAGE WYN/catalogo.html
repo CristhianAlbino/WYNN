@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic Page Info -->
+		<meta charset="utf-8" />
+		<title>WYN- DASHBOARD</title>
+
+		<!-- Site favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/w/1.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/w/1.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/w/1.png"
+		/>
+
+		<!-- Mobile Specific Metas -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+
+		<!-- Google Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/styles/icon-font.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/datatables/css/dataTables.bootstrap4.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/datatables/css/responsive.bootstrap4.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+		></script>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GBZ3SGGX85");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<div class="pre-loader">
+			<div class="pre-loader-box">
+				<div class="loader-logo">
+					<img src="/Tela Inicial copy/w.png" alt="" />
+				</div>
+				<div class="loader-progress" id="progress_div">
+					<div class="bar" id="bar1"></div>
+				</div>
+				<div class="percent" id="percent1">0%</div>
+				<div class="loading-text">Carregando...</div>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="header-left">
+				<div class="menu-icon bi bi-list"></div>
+				<div
+					class="search-toggle-icon bi bi-search"
+					data-toggle="header_search"
+				></div>
+				<div class="header-search">
+					<form>
+						<div class="form-group mb-0">
+							<i class="dw dw-search2 search-icon"></i>
+							<input
+								type="text"
+								class="form-control search-input"
+								placeholder="Search Here"
+							/>
+							<div class="dropdown">
+								<a
+									class="dropdown-toggle no-arrow"
+									href="#"
+									role="button"
+									data-toggle="dropdown"
+								>
+									<i class="ion-arrow-down-c"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label"
+											>De</label
+										>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label">Para</label>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label"
+											>Sujeito</label
+										>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="text-right">
+										<button class="btn btn-primary">Pesquisar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-right">
+				<div class="dashboard-setting user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="javascript:;"
+							data-toggle="right-sidebar"
+						>
+							<i class="dw dw-settings2"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="user-info-dropdown">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle"
+							href="#"
+							role="button"
+							data-toggle="dropdown"
+						>
+							<span class="user-icon">
+								<img src="/w/1.png" alt="" />
+							</span>
+							<span class="user-name">Cliente</span>
+						</a>
+						<div
+							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+						>
+							<a class="dropdown-item" href="profile.html"
+								><i class="dw dw-user1"></i> Perfil</a
+							>
+							<a class="dropdown-item" href="profile.html"
+								><i class="dw dw-settings2"></i>Configurações</a
+							>
+							<a class="dropdown-item" href="faq.html"
+								><i class="dw dw-help"></i> Ajuda</a
+							>
+							<a class="dropdown-item" href="login.html"
+								><i class="dw dw-logout"></i> Sair</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="right-sidebar">
+			<div class="sidebar-title">
+				<h3 class="weight-600 font-16 text-blue">
+					Configuração de Layout
+					<span class="btn-block font-weight-400 font-12"
+						>Personalização</span
+					>
+				</h3>
+				<div class="close-sidebar" data-toggle="right-sidebar-close">
+					<i class="icon-copy ion-close-round"></i>
+				</div>
+			</div>
+			<div class="right-sidebar-body customscroll">
+				<div class="right-sidebar-body-content">
+					<h4 class="weight-600 font-18 pb-10">Fundo</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-white active"
+							>Claro</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-dark"
+							>Escuro</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Fundo</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-light"
+							>Claro</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-dark active"
+							>Escuro</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Icone</h4>
+					<div class="sidebar-radio-group pb-10 mb-10">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-1"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-1"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebaricon-1"
+								><i class="fa fa-angle-down"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-2"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-2"
+							/>
+							<label class="custom-control-label" for="sidebaricon-2"
+								><i class="ion-plus-round"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-3"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-3"
+							/>
+							<label class="custom-control-label" for="sidebaricon-3"
+								><i class="fa fa-angle-double-right"></i
+							></label>
+						</div>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Icones do Menu</h4>
+					<div class="sidebar-radio-group pb-30 mb-10">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-1"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-1"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebariconlist-1"
+								><i class="ion-minus-round"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-2"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-2"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-2"
+								><i class="fa fa-circle-o" aria-hidden="true"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-3"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-3"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-3"
+								><i class="dw dw-check"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-4"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-4"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebariconlist-4"
+								><i class="icon-copy dw dw-next-2"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-5"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-5"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-5"
+								><i class="dw dw-fast-forward-1"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-6"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-6"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-6"
+								><i class="dw dw-next"></i
+							></label>
+						</div>
+					</div>
+
+					<div class="reset-options pt-30 text-center">
+						<button class="btn btn-danger" id="reset-settings">
+							Resetar Configurações
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="left-side-bar">
+			<div class="brand-logo">
+				<a href="index.html">
+					<img src="/Tela Inicial copy/w (1).png" alt="" class="dark-logo" />
+					<img
+						src="/Tela Inicial copy/w (1).png"
+						alt=""
+						class="light-logo"
+					/>
+				</a>
+				<div class="close-sidebar" data-toggle="left-sidebar-close">
+					<i class="ion-close-round"></i>
+				</div>
+			</div>
+			<div class="menu-block customscroll">
+				<div class="sidebar-menu">
+					<ul id="accordion-menu">
+						<li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-house"></span
+								><span class="mtext">Inicio</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="index.html">Dashboard</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Histórico</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="form-basic.html">Histórico</a></li>
+								<li><a href="/LANDING PAGE WYN/LANDING PAGE WYN/pedido.html">Fazer Pedidos</a></li>
+								<li><a href="/LANDING PAGE WYN/LANDING PAGE WYN/contratos.html">Meus Pedidos</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/Tela Cliente/serviços/dist/index.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi-chat-right-dots"></span
+								><span class="mtext">Serviços</span>
+							</a>
+						</li>
+		
+						<li>
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-file-pdf"></span
+								><span class="mtext">Documentação</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="/Tela Inicial copy/Termos e Condições.docx">Termos e Condições</a></li>
+							</ul>
+						</li>
+						<li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-menu-overlay"></div>
+		<div class="main-container">
+			<div class="pd-ltr-20 xs-pd-20-10">
+			  <div class="min-height-200px">
+				<div class="page-header">
+				  <div class="row">
+					<div class="col-md-6 col-sm-12">
+					  <div class="title">
+						<h4>Solicitação de Serviço</h4>
+					  </div>
+					  <nav aria-label="breadcrumb" role="navigation">
+						<ol class="breadcrumb">
+						  <li class="breadcrumb-item">
+							<a href="index.html">Início</a>
+						  </li>
+						  <li class="breadcrumb-item active" aria-current="page">
+							Solicitação de Serviço
+						  </li>
+						</ol>
+					  </nav>
+					</div>
+					<div class="col-md-6 col-sm-12 text-right">
+					  <div class="dropdown">
+						<a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						  Ver Mais
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+						  <a class="dropdown-item" href="#">Exportar Lista</a>
+						  <a class="dropdown-item" href="#">Políticas</a>
+						  <a class="dropdown-item" href="#">Ver Ativos</a>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<ul class="lista">
+					<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+					<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons|Roboto:100,300,400,500'>
+					<link rel="stylesheet" href="/ifood (1)/ifood/dist/style.css">
+				  
+					<li>
+						<a href="pedido.html" class="abrir">
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$70,00</span>
+						<p class="titulo">Troca de Lâmpadas</p>
+						<p class="descricao">Substituição de lâmpadas queimadas ou troca por LED.</p>
+						<div class="mais ocultar">
+						  <p>Inclui verificação de soquete, tensão e instalação segura.</p>
+						  <p>Ideal para ambientes residenciais ou comerciais.</p>
+						</div>
+					  </div>
+					</a>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir">
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$90,00</span>
+						<p class="titulo">Instalação de Tomadas</p>
+						<p class="descricao">Instalação ou substituição de tomadas 110V/220V.</p>
+						<div class="mais ocultar">
+						  <p>Verificação da fiação e disjuntores para segurança elétrica.</p>
+						  <p>Pode incluir mudança de local e instalação embutida.</p>
+						</div>
+					  </div>
+					    </a>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir"></a>
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$180,00</span>
+						<p class="titulo">Troca de Disjuntor</p>
+						<p class="descricao">Substituição de disjuntores danificados ou obsoletos.</p>
+						<div class="mais ocultar">
+						  <p>Verificação do quadro elétrico e dimensionamento correto.</p>
+						  <p>Indicado para prevenir curtos e sobrecargas.</p>
+						</div>
+					  </div>
+					</a>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir"></a>
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$350,00</span>
+						<p class="titulo">Instalação de Quadro de Luz</p>
+						<p class="descricao">Montagem ou substituição de quadro de distribuição.</p>
+						<div class="mais ocultar">
+						  <p>Ideal para obras ou atualizações de rede elétrica.</p>
+						  <p>Inclui organização de circuitos e identificação de disjuntores.</p>
+						</div>
+					  </div>
+					</a>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir"></a>
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$120,00</span>
+						<p class="titulo">Reparo em Curto-Circuito</p>
+						<p class="descricao">Identificação e correção de falhas elétricas.</p>
+						<div class="mais ocultar">
+						  <p>Diagnóstico com ferramentas específicas e reparo imediato.</p>
+						  <p>Segurança garantida para evitar choques e incêndios.</p>
+						</div>
+					  </div>
+					</a>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir"></a>
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$220,00</span>
+						<p class="titulo">Instalação de Ventilador de Teto</p>
+						<p class="descricao">Montagem e fixação de ventiladores com ou sem lustre.</p>
+						<div class="mais ocultar">
+						  <p>Inclui instalação elétrica e verificação de suporte adequado.</p>
+						  <p>Equilíbrio, teste de funcionamento e ajustes finais inclusos.</p>
+						</div>
+					  </div>
+					</a>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir"></a>
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$130,00</span>
+						<p class="titulo">Instalação de Luminárias</p>
+						<p class="descricao">Fixação e ligação elétrica de luminárias diversas.</p>
+						<div class="mais ocultar">
+						  <p>Para tetos, paredes, trilhos ou spots embutidos.</p>
+						  <p>Inclui testes e ajustes de iluminação.</p>
+						</div>
+					  </div>
+					</a>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir"></a>
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$280,00</span>
+						<p class="titulo">Troca de Fiação</p>
+						<p class="descricao">Substituição de fiação elétrica antiga ou danificada.</p>
+						<div class="mais ocultar">
+						  <p>Segurança, eficiência e atualização da rede elétrica.</p>
+						  <p>Ideal para reformas ou imóveis antigos.</p>
+						</div>
+					  </div>
+					</a>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir"></a>
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$300,00</span>
+						<p class="titulo">Instalação de DPS e DR</p>
+						<p class="descricao">Proteção contra surtos elétricos e choques.</p>
+						<div class="mais ocultar">
+						  <p>Instalação dos dispositivos no quadro de luz.</p>
+						  <p>Previne queima de aparelhos e garante segurança.</p>
+						</div>
+					  </div>
+					</li>
+				  
+					<li>
+						<a href="pedido.html" class="abrir"></a>
+					  <div class="foto">
+						<img src="/w/1.png">
+					  </div>
+					  <div class="conteudo">
+						<span class="preco">R$450,00</span>
+						<p class="titulo">Instalação Elétrica Residencial</p>
+						<p class="descricao">Serviço completo de elétrica para nova residência.</p>
+						<div class="mais ocultar">
+						  <p>Desde o quadro de distribuição até os pontos de uso.</p>
+						  <p>Planejamento de circuitos, tomadas, iluminação e padrões.</p>
+						</div>
+					  </div>
+					</li>
+				  </ul>
+				  
+				  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
+				  
+		  
+		  <div class="footer-wrap pd-20 mb-20 card-box">
+			Plataforma WYN-TECH
+		  </div>
+		  
+		  <script src="vendors/scripts/core.js"></script>
+		  <script src="vendors/scripts/script.min.js"></script>
+		  <script src="vendors/scripts/process.js"></script>
+		  <script src="vendors/scripts/layout-settings.js"></script>
+		  <script src="src/plugins/apexcharts/apexcharts.min.js"></script>
+		  <script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+		  <script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+		  <script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+		  <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+		  <script src="vendors/scripts/dashboard3.js"></script>
+		  
+		  <noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+		  </noscript>
+		  
+		  <script>
+			async function carregarPerfil() {
+			  const token = localStorage.getItem('token');
+			  const usuarioCache = localStorage.getItem('usuario');
+		  
+			  if (!token || !usuarioCache) {
+				window.location.href = "login.html";
+				return;
+			  }
+		  
+			  const usuario = JSON.parse(usuarioCache);
+			  const nomeSpan = document.querySelector(".user-name");
+			  if (nomeSpan) nomeSpan.textContent = usuario.nome;
+		  
+			  try {
+				const res = await fetch('http://127.0.0.1:3000/perfil', {
+				  headers: { 'Authorization': 'Bearer ' + token }
+				});
+		  
+				if (!res.ok) throw new Error("Erro ao buscar perfil");
+				const data = await res.json();
+		  
+				if (data.usuario?.nome) {
+				  if (nomeSpan) nomeSpan.textContent = data.usuario.nome;
+				}
+		  
+				const info = document.getElementById('info');
+				if (info) {
+				  info.innerHTML = `
+					<h2>Bem-vindo, ${data.usuario.nome}</h2>
+					<p>ID: ${data.usuario._id}</p>
+					<p>Email: ${data.usuario.email}</p>
+				  `;
+				}
+			  } catch (err) {
+				console.error(err);
+				alert('Erro ao carregar perfil');
+				window.location.href = "login.html";
+			  }
+			}
+		  
+			carregarPerfil();
+		  </script>
+		  
+		  </body>
+		  
+</html>

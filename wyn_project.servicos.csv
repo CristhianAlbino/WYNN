@@ -1,0 +1,4 @@
+_id,nome_cliente,email_cliente,telefone_cliente,endereco_servico,notas_adicionais,tipo_servico,urgente,horario_preferencial,servicos_adicionais[0],servicos_adicionais[1],status,data_solicitacao,__v
+6744fe9b180133f527b40dc8,Matheus,matheusoliveira@gmail.com,15988075220,Rua Jeronimo Alves Souza,"Limpeza de Calhas,Piscina",limpeza,true,noite,desinfeccao,limpeza_profunda,aceito,2024-11-25T22:47:55.209Z,0
+674501f7835a5962031fa4c3,Pablo,pablo@gmail.com,15988075220,Rua Jeronimo Alves Souza,"Limpeza de Calhas,Piscina",limpeza,true,noite,desinfeccao,limpeza_profunda,recusado,2024-11-25T23:02:15.544Z,0
+67450229835a5962031fa4c8,Cristhian,Cristhian@gmail.com,15988075220,Rua Jeronimo Alves Souza,Traga sua comida,eletricista,true,noite,materiais,desinfeccao,pendente,2024-11-25T23:03:05.916Z,0

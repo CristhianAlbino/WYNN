@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic Page Info -->
+		<meta charset="utf-8" />
+		<title>WYN- DASHBOARD</title>
+
+		<!-- Site favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/w/1.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/w/1.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/w/1.png"
+		/>
+
+		<!-- Mobile Specific Metas -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+
+		<!-- Google Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/styles/icon-font.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/datatables/css/dataTables.bootstrap4.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/datatables/css/responsive.bootstrap4.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+		></script>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GBZ3SGGX85");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<div class="pre-loader">
+			<div class="pre-loader-box">
+				<div class="loader-logo">
+					<img src="/Tela Inicial copy/w.png" alt="" />
+				</div>
+				<div class="loader-progress" id="progress_div">
+					<div class="bar" id="bar1"></div>
+				</div>
+				<div class="percent" id="percent1">0%</div>
+				<div class="loading-text">Carregando...</div>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="header-left">
+				<div class="menu-icon bi bi-list"></div>
+				<div
+					class="search-toggle-icon bi bi-search"
+					data-toggle="header_search"
+				></div>
+				<div class="header-search">
+					<form>
+						<div class="form-group mb-0">
+							<i class="dw dw-search2 search-icon"></i>
+							<input
+								type="text"
+								class="form-control search-input"
+								placeholder="Search Here"
+							/>
+							<div class="dropdown">
+								<a
+									class="dropdown-toggle no-arrow"
+									href="#"
+									role="button"
+									data-toggle="dropdown"
+								>
+									<i class="ion-arrow-down-c"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label"
+											>De</label
+										>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label">Para</label>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label"
+											>Sujeito</label
+										>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="text-right">
+										<button class="btn btn-primary">Pesquisar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-right">
+				<div class="dashboard-setting user-notification">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle no-arrow"
+							href="javascript:;"
+							data-toggle="right-sidebar"
+						>
+							<i class="dw dw-settings2"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="user-info-dropdown">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle"
+							href="#"
+							role="button"
+							data-toggle="dropdown"
+						>
+							<span class="user-icon">
+								<img src="/w/1.png" alt="" />
+							</span>
+							<span class="user-name">Cliente</span>
+						</a>
+						<div
+							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+						>
+							<a class="dropdown-item" href="profile.html"
+								><i class="dw dw-user1"></i> Perfil</a
+							>
+							<a class="dropdown-item" href="profile.html"
+								><i class="dw dw-settings2"></i>Configurações</a
+							>
+							<a class="dropdown-item" href="faq.html"
+								><i class="dw dw-help"></i> Ajuda</a
+							>
+							<a class="dropdown-item" href="login.html"
+								><i class="dw dw-logout"></i> Sair</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="right-sidebar">
+			<div class="sidebar-title">
+				<h3 class="weight-600 font-16 text-blue">
+					Configuração de Layout
+					<span class="btn-block font-weight-400 font-12"
+						>Personalização</span
+					>
+				</h3>
+				<div class="close-sidebar" data-toggle="right-sidebar-close">
+					<i class="icon-copy ion-close-round"></i>
+				</div>
+			</div>
+			<div class="right-sidebar-body customscroll">
+				<div class="right-sidebar-body-content">
+					<h4 class="weight-600 font-18 pb-10">Fundo</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-white active"
+							>Claro</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary header-dark"
+							>Escuro</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Fundo</h4>
+					<div class="sidebar-btn-group pb-30 mb-10">
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-light"
+							>Claro</a
+						>
+						<a
+							href="javascript:void(0);"
+							class="btn btn-outline-primary sidebar-dark active"
+							>Escuro</a
+						>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Icone</h4>
+					<div class="sidebar-radio-group pb-10 mb-10">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-1"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-1"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebaricon-1"
+								><i class="fa fa-angle-down"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-2"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-2"
+							/>
+							<label class="custom-control-label" for="sidebaricon-2"
+								><i class="ion-plus-round"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebaricon-3"
+								name="menu-dropdown-icon"
+								class="custom-control-input"
+								value="icon-style-3"
+							/>
+							<label class="custom-control-label" for="sidebaricon-3"
+								><i class="fa fa-angle-double-right"></i
+							></label>
+						</div>
+					</div>
+
+					<h4 class="weight-600 font-18 pb-10">Icones do Menu</h4>
+					<div class="sidebar-radio-group pb-30 mb-10">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-1"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-1"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebariconlist-1"
+								><i class="ion-minus-round"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-2"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-2"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-2"
+								><i class="fa fa-circle-o" aria-hidden="true"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-3"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-3"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-3"
+								><i class="dw dw-check"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-4"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-4"
+								checked=""
+							/>
+							<label class="custom-control-label" for="sidebariconlist-4"
+								><i class="icon-copy dw dw-next-2"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-5"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-5"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-5"
+								><i class="dw dw-fast-forward-1"></i
+							></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input
+								type="radio"
+								id="sidebariconlist-6"
+								name="menu-list-icon"
+								class="custom-control-input"
+								value="icon-list-style-6"
+							/>
+							<label class="custom-control-label" for="sidebariconlist-6"
+								><i class="dw dw-next"></i
+							></label>
+						</div>
+					</div>
+
+					<div class="reset-options pt-30 text-center">
+						<button class="btn btn-danger" id="reset-settings">
+							Resetar Configurações
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="left-side-bar">
+			<div class="brand-logo">
+				<a href="indexx.html">
+					<img src="/Tela Inicial copy/w (1).png" alt="" class="dark-logo" />
+					<img
+						src="/Tela Inicial copy/w (1).png"
+						alt=""
+						class="light-logo"
+					/>
+				</a>
+				<div class="close-sidebar" data-toggle="left-sidebar-close">
+					<i class="ion-close-round"></i>
+				</div>
+			</div>
+			<div class="menu-block customscroll">
+				<div class="sidebar-menu">
+					<ul id="accordion-menu">
+						<li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-house"></span
+								><span class="mtext">Inicio</span>
+							</a>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-textarea-resize"></span
+								><span class="mtext">Histórico</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="form-basic.html">Histórico</a></li>
+								<li><a href="/LANDING PAGE WYN/LANDING PAGE WYN/pedido.html">Fazer Pedidos</a></li>
+								<li><a href="/LANDING PAGE WYN/LANDING PAGE WYN/contratos.html">Meus Pedidos</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/Tela Cliente/serviços/dist/index.html" class="dropdown-toggle no-arrow">
+								<span class="micon bi-chat-right-dots"></span
+								><span class="mtext">Serviços</span>
+							</a>
+						</li>
+		
+						<li>
+							<a href="javascript:;" class="dropdown-toggle">
+								<span class="micon bi bi-file-pdf"></span
+								><span class="mtext">Documentação</span>
+							</a>
+							<ul class="submenu">
+								<li><a href="/Tela Inicial copy/Termos e Condições.docx">Termos e Condições</a></li>
+							</ul>
+						</li>
+						<li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-menu-overlay"></div>
+		<div class="main-container">
+		  <div class="card-box pb-10">
+			<div class="h5 pd-20 mb-0">Meus Pedidos</div>
+			<div id="loading" style="text-align: center; display: none;">Carregando...</div>
+			<div id="feedback" style="text-align: center; color: red; display: none;"></div>
+			<div style="margin-bottom: 10px;">
+			  <input type="text" id="filtro-nome" placeholder="Filtrar por nome" style="padding: 5px; width: 200px;" />
+			</div>
+			<table class="data-table table nowrap">
+			  <thead>
+				<tr>
+				  <th class="table-plus">Cliente</th>
+				  <th>Tipo de Serviço</th>
+				  <th>Endereço</th>
+				  <th>Urgente</th>
+				  <th>Data</th>
+				  <th>Notas</th>
+				  <th class="datatable-nosort">Ações</th>
+				</tr>
+			  </thead>
+			  <tbody id="servicos-tabela"></tbody>
+			</table>
+		  </div>
+		
+		  <script>
+			// Função para carregar os pedidos feitos pelo usuário logado
+			async function carregarPedidos() {
+			  const loading = document.getElementById("loading");
+			  const tabela = document.getElementById("servicos-tabela");
+			  const feedback = document.getElementById("feedback");
+			  const userId = localStorage.getItem("userId");
+			  const token = localStorage.getItem("token");
+		
+			  loading.style.display = "block";
+			  feedback.style.display = "none";
+			  tabela.innerHTML = "";
+		
+			  if (!token) {
+				feedback.textContent = "Usuário não autenticado. Faça login novamente.";
+				feedback.style.display = "block";
+				loading.style.display = "none";
+				return;
+			  }
+		
+			  try {
+				const response = await fetch("http://localhost:3000/solicitacoes-servicos", {
+				  headers: {
+					'Authorization': `Bearer ${token}`
+				  }
+				});
+		
+				if (!response.ok) throw new Error("Erro ao buscar solicitações.");
+		
+				const servicos = await response.json();
+		
+				const pedidosUsuario = servicos.filter((s) => {
+				  const uid = s.usuario_id?._id || s.usuario_id?.$oid || s.usuario_id;
+				  return uid?.toString() === userId;
+				});
+		
+				if (pedidosUsuario.length === 0) {
+				  tabela.innerHTML = '<tr><td colspan="7">Nenhum pedido encontrado.</td></tr>';
+				  return;
+				}
+		
+				pedidosUsuario.forEach((servico) => {
+				  const row = document.createElement("tr");
+				  row.innerHTML = `
+					<td class="table-plus">
+					  <div class="name-avatar d-flex align-items-center">
+						<div class="avatar mr-2 flex-shrink-0">
+						  <img src="vendors/images/photo4.jpg" class="border-radius-100 shadow" width="40" height="40" alt="" />
+						</div>
+						<div class="txt">
+						  <div class="weight-600">${servico.nome_cliente || "Cliente"}</div>
+						</div>
+					  </div>
+					</td>
+					<td>${servico.tipo_servico || "N/A"}</td>
+					<td>${servico.endereco_servico || "Não informado"}</td>
+					<td>${servico.urgente ? "Sim" : "Não"}</td>
+					<td>${new Date(servico.data_solicitacao).toLocaleDateString()}</td>
+					<td>${servico.notas_adicionais || "Nenhuma"}</td>
+					<td>
+					  <select class="avaliar-servico" data-id="${servico._id}">
+						<option value="">Selecionar</option>
+						<option value="realizado">Serviço realizado</option>
+						<option value="nao-realizado">Serviço não realizado</option>
+					  </select>
+					</td>
+				  `;
+				  tabela.appendChild(row);
+				});
+			  } catch (error) {
+				console.error(error);
+				feedback.textContent = "Erro ao carregar solicitações.";
+				feedback.style.display = "block";
+			  } finally {
+				loading.style.display = "none";
+			  }
+			}
+		
+			// Filtro de nome do cliente
+			document.getElementById("filtro-nome").addEventListener("input", (event) => {
+			  const filtro = event.target.value.toLowerCase();
+			  const rows = document.querySelectorAll("#servicos-tabela tr");
+			  rows.forEach((row) => {
+				const cliente = row.querySelector(".weight-600")?.textContent.toLowerCase() || "";
+				row.style.display = cliente.includes(filtro) ? "" : "none";
+			  });
+			});
+		
+			// Redireciona para avaliação
+			document.addEventListener("change", (event) => {
+			  if (event.target.classList.contains("avaliar-servico")) {
+				const status = event.target.value;
+				const id = event.target.dataset.id;
+		
+				if (status === "realizado" || status === "nao-realizado") {
+				  window.location.href = `avaliação.html?id=${id}&status=${status}`;
+				}
+			  }
+			});
+		
+			// Inicialização da tela
+			carregarPedidos();
+		  </script>
+		</div>
+		
+			
+		</div>
+		  <div class="footer-wrap pd-20 mb-20 card-box">
+			Plataforma WYN-TECH
+		  </div>
+		  
+		  <script src="vendors/scripts/core.js"></script>
+		  <script src="vendors/scripts/script.min.js"></script>
+		  <script src="vendors/scripts/process.js"></script>
+		  <script src="vendors/scripts/layout-settings.js"></script>
+		  <script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+		  <script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+		  <script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+		  <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+		  
+		  <noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+		  </noscript>
+		  
+		  <script>
+			async function carregarPerfil() {
+			  const token = localStorage.getItem('token');
+			  const usuarioCache = localStorage.getItem('usuario');
+		  
+			  if (!token || !usuarioCache) {
+				window.location.href = "login.html";
+				return;
+			  }
+		  
+			  const usuario = JSON.parse(usuarioCache);
+			  const nomeSpan = document.querySelector(".user-name");
+			  if (nomeSpan) nomeSpan.textContent = usuario.nome;
+		  
+			  try {
+				const res = await fetch('http://127.0.0.1:3000/perfil', {
+				  headers: { 'Authorization': 'Bearer ' + token }
+				});
+		  
+				if (!res.ok) throw new Error("Erro ao buscar perfil");
+				const data = await res.json();
+		  
+				if (data.usuario?.nome) {
+				  if (nomeSpan) nomeSpan.textContent = data.usuario.nome;
+				}
+		  
+				const info = document.getElementById('info');
+				if (info) {
+				  info.innerHTML = `
+					<h2>Bem-vindo, ${data.usuario.nome}</h2>
+					<p>ID: ${data.usuario._id}</p>
+					<p>Email: ${data.usuario.email}</p>
+				  `;
+				}
+			  } catch (err) {
+				console.error(err);
+				alert('Erro ao carregar perfil');
+				window.location.href = "login.html";
+			  }
+			}
+		  
+			carregarPerfil();
+		  </script>
+		  
+		  </body>
+		  
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WYN - Mensagens</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    const API_URL = 'http://localhost:3000'; // URL do backend
+
+    // Carregar mensagens do backend
+    async function carregarMensagens(remetente, destinatario) {
+      try {
+        const response = await fetch(`${API_URL}/mensagens/${remetente}/${destinatario}`);
+        const mensagens = await response.json();
+
+        const chatBody = document.querySelector('.chat-body');
+        chatBody.innerHTML = ''; // Limpa o chat antes de carregar as mensagens
+
+        mensagens.forEach(msg => {
+          const message = document.createElement('div');
+          message.classList.add('message', msg.remetente === remetente ? 'sent' : 'received');
+          message.innerHTML = `
+            <p>${msg.conteudo}</p>
+            <span class="timestamp">${new Date(msg.timestamp).toLocaleTimeString()}</span>
+          `;
+          chatBody.appendChild(message);
+        });
+
+        scrollParaBaixo();
+      } catch (error) {
+        console.error('Erro ao carregar mensagens:', error);
+      }
+    }
+
+    // Enviar mensagem para o backend
+    async function enviarMensagem(remetente, destinatario, conteudo) {
+      try {
+        const response = await fetch(`${API_URL}/enviar-mensagem`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ remetente, destinatario, conteudo })
+        });
+
+        if (response.ok) {
+          carregarMensagens(remetente, destinatario); // Atualiza o chat após enviar
+        } else {
+          const error = await response.json();
+          alert(`Erro ao enviar mensagem: ${error.message}`);
+        }
+      } catch (error) {
+        console.error('Erro ao enviar mensagem:', error);
+      }
+    }
+
+    // Função para aprovar orçamento (exemplo de ação)
+    function aprovarOrcamento() {
+      const messageAction = document.querySelector('.message-action');
+      messageAction.innerHTML = `
+        <p class="approved-message">✅ Orçamento aprovado! O serviço está em andamento.</p>
+        <span class="timestamp">${new Date().toLocaleTimeString()}</span>
+      `;
+      alert('Orçamento aprovado com sucesso!');
+    }
+
+    // Função para rolar o chat para baixo automaticamente
+    function scrollParaBaixo() {
+      const chatBody = document.querySelector('.chat-body');
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const remetente = 'cliente123'; // Substitua pelo ID do cliente
+      const destinatario = 'prestador456'; // Substitua pelo ID do prestador
+
+      carregarMensagens(remetente, destinatario); // Carregar mensagens ao iniciar
+
+      // Enviar mensagem ao clicar no botão de envio
+      document.querySelector('.send-btn').addEventListener('click', () => {
+        const input = document.querySelector('.message-input');
+        const conteudo = input.value.trim();
+
+        if (conteudo) {
+          enviarMensagem(remetente, destinatario, conteudo);
+          input.value = ''; // Limpar o campo de entrada
+        } else {
+          alert('Por favor, insira uma mensagem antes de enviar.');
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">WYN</div>
+      <div class="header-actions">
+        <a href="#" class="icon">📩 Mensagens</a>
+        <a href="#" class="icon">🔔 Notificações</a>
+        <button class="client-btn">Cliente</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <h3>Mensagens</h3>
+      <input type="text" placeholder="Buscar mensagens" class="search">
+      <p>Parece que você não tem outros chats de mensagens no momento.</p>
+    </aside>
+
+    <section class="chat">
+      <div class="chat-header">
+        <h4>Prestador de Serviços (Eletrodomésticos)</h4>
+      </div>
+
+      <div class="chat-body">
+        <!-- Mensagens carregadas dinamicamente -->
+      </div>
+
+      <div class="chat-footer">
+        <input type="text" placeholder="Mensagem" class="message-input">
+        <button class="send-btn">✉️</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#">Ajuda</a> • 
+    <a href="#">Acessibilidade</a> • 
+    <a href="#">Termos e privacidade</a>
+  </footer>
+</body>
+</html>
